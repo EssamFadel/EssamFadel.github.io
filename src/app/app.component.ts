@@ -2,10 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 interface Publication { title: string; venue: string; year: string; note: string; }
+interface Experience { organisation: string; role: string; location: string; period: string; summary: string; }
+interface Education { award: string; institution: string; location: string; year: string; }
 interface Profile {
   name: string; role: string; institution: string; chair: string; company: string;
   companyRole: string; project: string; projectDescription: string; emailAcademic: string;
   emailCompany: string; orcid: string; github: string; siteUrl: string; publications: Publication[];
+  experience: Experience[]; education: Education[]; expertise: string[];
 }
 
 @Component({ selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss'] })

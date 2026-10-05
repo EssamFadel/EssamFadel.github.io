@@ -3,6 +3,7 @@
     <a class="wordmark" href="#top" aria-label="Essam Fadel home">EF<span>.</span></a>
     <nav aria-label="Primary navigation">
       <button (click)="scrollTo('research')">Research</button>
+      <button (click)="scrollTo('experience')">Profile</button>
       <button (click)="scrollTo('publication')">Publication</button>
       <button (click)="scrollTo('connect')">Connect</button>
     </nav>
@@ -22,6 +23,16 @@
     <div class="hero-meta"><p>{{ p.chair }}</p><span></span><p>Weimar, Germany</p></div>
   </section>
 
+  <section class="affiliations" aria-label="Current affiliations">
+    <a href="https://www.uni-weimar.de/en/civil-and-environmental-engineering/chairs/intelligent-technical-design/" target="_blank" rel="noopener" class="affiliation-logo affiliation-logo--bauhaus">
+      <img src="assets/logos/bauhaus-weimar-faculty.png" alt="Bauhaus-Universität Weimar, Faculty of Civil and Environmental Engineering">
+    </a>
+    <a href="https://planen-bauen40.de/" target="_blank" rel="noopener" class="affiliation-logo affiliation-logo--pb40">
+      <img src="assets/logos/planen-bauen40.jpg" alt="planen-bauen 4.0">
+    </a>
+    <p>Academic research<br><span>and applied innovation</span></p>
+  </section>
+
   <section class="statement" id="research" aria-labelledby="research-heading">
     <p class="section-label">01 / Research</p>
     <div><h2 id="research-heading">Craft knowledge deserves a digital future.</h2><p>I work at the intersection of Building Information Modeling, data spaces and human–machine interaction. My doctoral research title is currently in development.</p></div>
@@ -33,16 +44,34 @@
     <div class="project-facts"><p>Academic home</p><strong>{{ p.institution }}</strong><p>Chair</p><strong>{{ p.chair }}</strong><p>Industry</p><strong>{{ p.company }}<br>{{ p.companyRole }}</strong></div>
   </section>
 
+  <section class="experience" id="experience" aria-labelledby="experience-heading">
+    <div class="experience-intro"><p class="section-label">02 / Profile</p><h2 id="experience-heading">Two contexts. One connected practice.</h2><p>My work moves between university research and applied innovation in the built environment.</p></div>
+    <ol class="experience-list">
+      <li *ngFor="let role of p.experience">
+        <p class="experience-period">{{ role.period }}</p>
+        <div><h3>{{ role.organisation }}</h3><p class="experience-role">{{ role.role }} · {{ role.location }}</p><p class="experience-summary">{{ role.summary }}</p></div>
+      </li>
+    </ol>
+  </section>
+
   <section class="publication" id="publication" aria-labelledby="publication-heading">
-    <div class="publication-heading"><p class="section-label">02 / Publication</p><h2 id="publication-heading">Recent work</h2></div>
+    <div class="publication-heading"><p class="section-label">03 / Publication</p><h2 id="publication-heading">Recent work</h2></div>
     <article *ngFor="let publication of p.publications; let index = index" class="publication-row">
       <span class="publication-index">0{{ index + 1 }}</span><h3>{{ publication.title }}</h3><div><p>{{ publication.venue }}</p><p>{{ publication.year }}</p></div><p class="award" *ngIf="publication.note">{{ publication.note }}</p>
     </article>
   </section>
 
+  <section class="education" aria-labelledby="education-heading">
+    <div><p class="section-label">04 / Education</p><h2 id="education-heading">Built from engineering.</h2></div>
+    <div class="education-list">
+      <article *ngFor="let degree of p.education"><p>{{ degree.year }}</p><h3>{{ degree.award }}</h3><span>{{ degree.institution }} · {{ degree.location }}</span></article>
+    </div>
+    <div class="expertise"><p class="section-label">Core expertise</p><ul><li *ngFor="let item of p.expertise">{{ item }}</li></ul></div>
+  </section>
+
   <section class="connect" id="connect" aria-labelledby="connect-heading">
     <div class="connect-copy">
-      <p class="section-label">03 / Connect</p><h2 id="connect-heading">Start a conversation.</h2><p>For research, collaboration or BIM innovation, I would be glad to hear from you.</p>
+      <p class="section-label">05 / Connect</p><h2 id="connect-heading">Start a conversation.</h2><p>For research, collaboration or BIM innovation, I would be glad to hear from you.</p>
       <div class="email-stack"><a [href]="'mailto:' + p.emailAcademic">{{ p.emailAcademic }} <span>↗</span></a><a [href]="'mailto:' + p.emailCompany">{{ p.emailCompany }} <span>↗</span></a></div>
       <div class="contact-links"><a [href]="p.orcid" target="_blank" rel="noopener">ORCID</a><a [href]="p.github" target="_blank" rel="noopener">GitHub</a></div>
     </div>
