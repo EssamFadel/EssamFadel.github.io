@@ -1,0 +1,53 @@
+<main *ngIf="profile as p">
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Essam Fadel home">EF<span>.</span></a>
+    <nav aria-label="Primary navigation">
+      <button (click)="scrollTo('research')">Research</button>
+      <button (click)="scrollTo('publication')">Publication</button>
+      <button (click)="scrollTo('connect')">Connect</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="top" aria-labelledby="hero-heading">
+    <div class="hero-image" aria-hidden="true"><img src="assets/images/essam-fadel.jpeg" alt=""></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Researcher · BIM & innovation</p>
+      <h1 id="hero-heading">{{ p.name }}</h1>
+      <p class="lead">{{ p.role }} at <strong>{{ p.institution }}</strong>, advancing how craft, data and intelligent technical design meet.</p>
+      <div class="hero-actions">
+        <button class="button button--primary" (click)="scrollTo('connect')">Connect with me <span>↘</span></button>
+        <a class="text-link" [href]="p.orcid" target="_blank" rel="noopener">ORCID profile <span>↗</span></a>
+      </div>
+    </div>
+    <div class="hero-meta"><p>{{ p.chair }}</p><span></span><p>Weimar, Germany</p></div>
+  </section>
+
+  <section class="statement" id="research" aria-labelledby="research-heading">
+    <p class="section-label">01 / Research</p>
+    <div><h2 id="research-heading">Craft knowledge deserves a digital future.</h2><p>I work at the intersection of Building Information Modeling, data spaces and human–machine interaction. My doctoral research title is currently in development.</p></div>
+  </section>
+
+  <section class="project" aria-labelledby="project-heading">
+    <div class="project-number">HdZ<br><span>01—26</span></div>
+    <div><p class="section-label">Current research project</p><h2 id="project-heading">{{ p.project }}</h2><p class="project-copy">{{ p.projectDescription }}</p></div>
+    <div class="project-facts"><p>Academic home</p><strong>{{ p.institution }}</strong><p>Chair</p><strong>{{ p.chair }}</strong><p>Industry</p><strong>{{ p.company }}<br>{{ p.companyRole }}</strong></div>
+  </section>
+
+  <section class="publication" id="publication" aria-labelledby="publication-heading">
+    <div class="publication-heading"><p class="section-label">02 / Publication</p><h2 id="publication-heading">Recent work</h2></div>
+    <article *ngFor="let publication of p.publications; let index = index" class="publication-row">
+      <span class="publication-index">0{{ index + 1 }}</span><h3>{{ publication.title }}</h3><div><p>{{ publication.venue }}</p><p>{{ publication.year }}</p></div><p class="award" *ngIf="publication.note">{{ publication.note }}</p>
+    </article>
+  </section>
+
+  <section class="connect" id="connect" aria-labelledby="connect-heading">
+    <div class="connect-copy">
+      <p class="section-label">03 / Connect</p><h2 id="connect-heading">Start a conversation.</h2><p>For research, collaboration or BIM innovation, I would be glad to hear from you.</p>
+      <div class="email-stack"><a [href]="'mailto:' + p.emailAcademic">{{ p.emailAcademic }} <span>↗</span></a><a [href]="'mailto:' + p.emailCompany">{{ p.emailCompany }} <span>↗</span></a></div>
+      <div class="contact-links"><a [href]="p.orcid" target="_blank" rel="noopener">ORCID</a><a [href]="p.github" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+    <aside class="qr-panel" aria-label="Profile QR code"><img src="assets/essam-fadel-qr.svg" alt="QR code linking to Essam Fadel's research profile"><p>Scan to save this profile</p><small>{{ p.siteUrl }}</small></aside>
+  </section>
+  <footer><span>© {{ p.name }} · {{ p.institution }}</span><span>Built for research exchange.</span></footer>
+</main>
+<div class="loading" *ngIf="!profile">Loading profile…</div>
