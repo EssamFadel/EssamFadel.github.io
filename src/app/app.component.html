@@ -23,7 +23,7 @@
     <div class="hero-meta"><p>{{ p.chair }}</p><span></span><p>Weimar, Germany</p></div>
   </section>
 
-  <section class="experience" id="experience" aria-labelledby="experience-heading">
+  <section class="experience section-reveal" id="experience" aria-labelledby="experience-heading">
     <div class="experience-intro"><p class="section-label" id="experience-heading">01 / Career path</p></div>
     <ol class="experience-list">
       <li *ngFor="let role of p.experience">
@@ -33,21 +33,21 @@
     </ol>
   </section>
 
-  <section class="projects" id="projects" aria-labelledby="projects-heading">
+  <section class="projects section-reveal" id="projects" aria-labelledby="projects-heading">
     <div class="projects-intro"><p class="section-label">02 / Projects</p><h2 id="projects-heading">Selected work</h2></div>
     <ol class="projects-list">
-      <li *ngFor="let project of p.projects; let index = index"><span>0{{ index + 1 }}</span><div><h3><a [href]="project.url" target="_blank" rel="noopener">{{ project.name }} <span aria-hidden="true">↗</span></a></h3><p class="project-context">{{ project.context }} · {{ project.period }}</p><p class="project-funding">Funder: {{ project.funder }} · Funding: {{ project.funding }}</p><p>{{ project.summary }}</p></div></li>
+      <li *ngFor="let project of p.projects; let index = index"><span>0{{ index + 1 }}</span><div><h3><a [href]="project.url" target="_blank" rel="noopener">{{ project.name }} <span aria-hidden="true">↗</span></a></h3><p class="project-context">{{ project.context }} · {{ project.period }}</p><p>{{ project.summary }}</p></div></li>
     </ol>
   </section>
 
-  <section class="publication" id="publication" aria-labelledby="publication-heading">
+  <section class="publication section-reveal" id="publication" aria-labelledby="publication-heading">
     <div class="publication-heading"><p class="section-label">03 / Publication</p><h2 id="publication-heading">Recent work</h2></div>
     <article *ngFor="let publication of p.publications; let index = index" class="publication-row">
       <span class="publication-index">0{{ index + 1 }}</span><h3>{{ publication.title }}</h3><div><p>{{ publication.venue }}</p><p>{{ publication.year }}</p></div><p class="award" *ngIf="publication.note">{{ publication.note }}</p>
     </article>
   </section>
 
-  <section class="education" aria-labelledby="education-heading">
+  <section class="education section-reveal" aria-labelledby="education-heading">
     <div><p class="section-label">04 / Education</p><h2 id="education-heading">Built from engineering.</h2></div>
     <div class="education-list">
       <article *ngFor="let degree of p.education"><p>{{ degree.year }}</p><h3>{{ degree.award }}</h3><span>{{ degree.institution }} · {{ degree.location }}</span></article>
@@ -55,7 +55,7 @@
     <div class="expertise"><p class="section-label">Core expertise</p><ul><li *ngFor="let item of p.expertise">{{ item }}</li></ul></div>
   </section>
 
-  <section class="connect" id="connect" aria-labelledby="connect-heading">
+  <section class="connect section-reveal" id="connect" aria-labelledby="connect-heading">
     <div class="connect-copy">
       <p class="section-label">05 / Connect</p><h2 id="connect-heading">Start a conversation.</h2><p>For research, collaboration or BIM innovation, I would be glad to hear from you.</p>
       <div class="email-stack"><a [href]="'mailto:' + p.emailAcademic">{{ p.emailAcademic }} <span>↗</span></a><a [href]="'mailto:' + p.emailCompany">{{ p.emailCompany }} <span>↗</span></a></div>
