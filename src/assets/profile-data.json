@@ -5,8 +5,6 @@
   "chair": "Chair of Intelligent Technical Design",
   "company": "planen-bauen 4.0 GmbH",
   "companyRole": "Research & Development · BIM & Innovation",
-  "project": "Handwerk der Zukunft",
-  "projectDescription": "Data-driven planning and human-robot interaction in existing buildings, connecting craft expertise, BIM workflows and robotics.",
   "emailAcademic": "essam.ahmed.hesham.salaheldin.fadel@uni-weimar.de",
   "emailCompany": "essam.fadel@planen-bauen40.de",
   "orcid": "https://orcid.org/0000-0002-6170-7611",
@@ -17,6 +15,15 @@
     { "organisation": "planen-bauen 4.0 GmbH", "role": "Research & Development · BIM & Innovation", "location": "Berlin, Germany", "period": "2020—present", "summary": "Developing and integrating digital methods, innovation projects and technology solutions across the planning, construction and operations value chain." },
     { "organisation": "Chair of Intelligent Technical Design", "role": "Research / Student Assistant", "location": "Weimar, Germany", "period": "2019—2020", "summary": "Supported research through simulation, virtual and mixed reality, teaching preparation and documentation." },
     { "organisation": "El Rwad for Modern Engineering", "role": "Junior Civil Engineer", "location": "Cairo, Egypt", "period": "2017—2018", "summary": "Coordinated construction work packages for a structural-concrete project, including planning, scheduling and cost monitoring." }
+  ],
+  "projects": [
+    { "name": "Handwerk der Zukunft", "context": "Bauhaus-Universität Weimar", "period": "2026—present", "summary": "Data-driven planning and human-robot interaction in existing buildings, linking craft expertise, BIM workflows and robotics." },
+    { "name": "Digital-TWIN", "context": "Research & development", "period": "2020—present", "summary": "Mixed-reality tools for HoloLens, a 4D VR simulation with Oculus and DESITE MD, and immersive IFC-web-viewer extensions for urban planning data." },
+    { "name": "BIM-SPEED", "context": "Research & development", "period": "2020—present", "summary": "Project-requirement and financial-management work, including BIM marketplace, BIM passport and BIM execution-platform concepts." },
+    { "name": "BIMSWARM", "context": "Research & development", "period": "2020—present", "summary": "Further development across project management, analytics dashboards, Jenkins-based DevOps workflows and operational improvements." },
+    { "name": "BIM-KIT", "context": "Research & development", "period": "2020—present", "summary": "IFC-model and JSON-IFC generation services, platform integrations, and a Camunda-based backend microservice for workflow automation." },
+    { "name": "EConBIM", "context": "Consortium project", "period": "2020—present", "summary": "Requirement catalogues, interface concepts and secure remote-access services delivered as containerized applications for construction workflows." },
+    { "name": "Construct-X", "context": "Data-space project", "period": "2020—present", "summary": "Use-case and requirement work for Construct-X, including an Eclipse Dataspace Connector app with SharePoint integration." }
   ],
   "education": [
     { "award": "Dr.-Ing. (ongoing)", "institution": "Bauhaus-Universität Weimar", "location": "Weimar, Germany", "year": "2022—present" },
