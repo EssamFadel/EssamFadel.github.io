@@ -36,7 +36,7 @@
   <section class="projects" id="projects" aria-labelledby="projects-heading">
     <div class="projects-intro"><p class="section-label">02 / Projects</p><h2 id="projects-heading">Selected work</h2></div>
     <ol class="projects-list">
-      <li *ngFor="let project of p.projects; let index = index"><span>0{{ index + 1 }}</span><div><h3><a [href]="project.url" target="_blank" rel="noopener">{{ project.name }} <span aria-hidden="true">↗</span></a></h3><p class="project-context">{{ project.context }} · {{ project.period }}</p><p>{{ project.summary }}</p></div></li>
+      <li *ngFor="let project of p.projects; let index = index"><span>0{{ index + 1 }}</span><div><h3><a [href]="project.url" target="_blank" rel="noopener">{{ project.name }} <span aria-hidden="true">↗</span></a></h3><p class="project-context">{{ project.context }} · {{ project.period }}</p><p class="project-funding">Funder: {{ project.funder }} · Funding: {{ project.funding }}</p><p>{{ project.summary }}</p></div></li>
     </ol>
   </section>
 
