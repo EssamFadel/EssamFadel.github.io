@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 interface Publication { title: string; venue: string; year: string; note: string; }
-interface Experience { organisation: string; role: string; location: string; period: string; summary: string; }
-interface Project { name: string; context: string; period: string; summary: string; }
+interface Experience { organisation: string; role: string; location: string; period: string; summary: string; url: string; }
+interface Project { name: string; context: string; period: string; summary: string; url: string; }
 interface Education { award: string; institution: string; location: string; year: string; }
 interface Profile {
   name: string; role: string; institution: string; chair: string; company: string;
