@@ -8,7 +8,7 @@ interface Education { award: string; institution: string; location: string; year
 interface Profile {
   name: string; role: string; institution: string; chair: string; company: string;
   companyRole: string; emailAcademic: string;
-  emailCompany: string; orcid: string; github: string; siteUrl: string; publications: Publication[];
+  emailCompany: string; orcid: string; researchGate: string; github: string; siteUrl: string; publications: Publication[];
   experience: Experience[]; projects: Project[]; education: Education[]; expertise: string[];
 }
 
