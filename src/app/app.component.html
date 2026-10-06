@@ -19,49 +19,97 @@
         <button class="button button--primary" (click)="scrollTo('connect')">Connect with me <span>↘</span></button>
         <a class="text-link" [href]="p.orcid" target="_blank" rel="noopener">ORCID profile <span>↗</span></a>
       </div>
-      <div class="hero-positions"><p class="hero-academic-role">{{ p.institution }} · {{ p.chair }}</p><p class="hero-academic-role">Research Associate · Weimar, Germany</p><p class="hero-company-role">{{ p.company }} · {{ p.companyRole }}</p></div>
+      <div class="hero-positions">
+        <p class="hero-academic-role">{{ p.institution }} . Research Associate </p>
+        <p class="hero-company-role">{{ p.company }} · {{ p.companyRole }}</p>
+      </div>
     </div>
   </section>
 
   <section class="experience section-reveal" id="experience" aria-labelledby="experience-heading">
-    <div class="experience-intro"><p class="section-label" id="experience-heading">01 / Career path</p></div>
+    <div class="experience-intro">
+      <p class="section-label" id="experience-heading">01 / Career path</p>
+    </div>
     <ol class="experience-list">
       <li *ngFor="let role of p.experience">
         <p class="experience-period">{{ role.period }}</p>
-        <div><h3><a [href]="role.url" target="_blank" rel="noopener">{{ role.organisation }} <span aria-hidden="true">↗</span></a></h3><p class="experience-role">{{ role.role }} · {{ role.location }}</p><p class="experience-summary">{{ role.summary }}</p></div>
+        <div>
+          <h3><a [href]="role.url" target="_blank" rel="noopener">{{ role.organisation }} <span
+                aria-hidden="true">↗</span></a></h3>
+          <p class="experience-role">{{ role.role }} · {{ role.location }}</p>
+          <p class="experience-summary">{{ role.summary }}</p>
+        </div>
       </li>
     </ol>
   </section>
 
   <section class="projects section-reveal" id="projects" aria-labelledby="projects-heading">
-    <div class="projects-intro"><p class="section-label">02 / Projects</p><h2 id="projects-heading">Selected work</h2></div>
+    <div class="projects-intro">
+      <p class="section-label">02 / Projects</p>
+      <h2 id="projects-heading">Selected work</h2>
+    </div>
     <ol class="projects-list">
-      <li *ngFor="let project of p.projects; let index = index"><span>0{{ index + 1 }}</span><div><h3><a [href]="project.url" target="_blank" rel="noopener">{{ project.name }} <span aria-hidden="true">↗</span></a></h3><p class="project-context">{{ project.context }} · {{ project.period }}</p><p>{{ project.summary }}</p></div></li>
+      <li *ngFor="let project of p.projects; let index = index"><span>0{{ index + 1 }}</span>
+        <div>
+          <h3><a [href]="project.url" target="_blank" rel="noopener">{{ project.name }} <span
+                aria-hidden="true">↗</span></a></h3>
+          <p class="project-context">{{ project.context }} · {{ project.period }}</p>
+          <p>{{ project.summary }}</p>
+        </div>
+      </li>
     </ol>
   </section>
 
   <section class="publication section-reveal" id="publication" aria-labelledby="publication-heading">
-    <div class="publication-heading"><p class="section-label">03 / Publication</p><h2 id="publication-heading">Recent work</h2></div>
+    <div class="publication-heading">
+      <p class="section-label">03 / Publication</p>
+      <h2 id="publication-heading">Recent work</h2>
+    </div>
     <article *ngFor="let publication of p.publications; let index = index" class="publication-row">
-      <span class="publication-index">0{{ index + 1 }}</span><h3>{{ publication.title }}</h3><div><p>{{ publication.venue }}</p><p>{{ publication.year }}</p></div><p class="award" *ngIf="publication.note">{{ publication.note }}</p>
+      <span class="publication-index">0{{ index + 1 }}</span>
+      <h3>{{ publication.title }}</h3>
+      <div>
+        <p>{{ publication.venue }}</p>
+        <p>{{ publication.year }}</p>
+      </div>
+      <p class="award" *ngIf="publication.note">{{ publication.note }}</p>
     </article>
   </section>
 
   <section class="education section-reveal" aria-labelledby="education-heading">
-    <div><p class="section-label">04 / Education</p><h2 id="education-heading">Built from engineering.</h2></div>
-    <div class="education-list">
-      <article *ngFor="let degree of p.education"><p>{{ degree.year }}</p><h3>{{ degree.award }}</h3><span>{{ degree.institution }} · {{ degree.location }}</span></article>
+    <div>
+      <p class="section-label">04 / Education</p>
+      <h2 id="education-heading">Built from engineering.</h2>
     </div>
-    <div class="expertise"><p class="section-label">Core expertise</p><ul><li *ngFor="let item of p.expertise">{{ item }}</li></ul></div>
+    <div class="education-list">
+      <article *ngFor="let degree of p.education">
+        <p>{{ degree.year }}</p>
+        <h3>{{ degree.award }}</h3><span>{{ degree.institution }} · {{ degree.location }}</span>
+      </article>
+    </div>
+    <div class="expertise">
+      <p class="section-label">Core expertise</p>
+      <ul>
+        <li *ngFor="let item of p.expertise">{{ item }}</li>
+      </ul>
+    </div>
   </section>
 
   <section class="connect section-reveal" id="connect" aria-labelledby="connect-heading">
     <div class="connect-copy">
-      <p class="section-label">05 / Connect</p><h2 id="connect-heading">Start a conversation.</h2><p>For research, collaboration or BIM innovation, I would be glad to hear from you.</p>
-      <div class="email-stack"><a [href]="'mailto:' + p.emailAcademic">{{ p.emailAcademic }} <span>↗</span></a><a [href]="'mailto:' + p.emailCompany">{{ p.emailCompany }} <span>↗</span></a></div>
-      <div class="contact-links"><a [href]="p.orcid" target="_blank" rel="noopener">ORCID</a><a [href]="p.researchGate" target="_blank" rel="noopener">ResearchGate</a><a [href]="p.github" target="_blank" rel="noopener">GitHub</a></div>
+      <p class="section-label">05 / Connect</p>
+      <h2 id="connect-heading">Start a conversation.</h2>
+      <p>For research, collaboration or BIM innovation, I would be glad to hear from you.</p>
+      <div class="email-stack"><a [href]="'mailto:' + p.emailAcademic">{{ p.emailAcademic }} <span>↗</span></a><a
+          [href]="'mailto:' + p.emailCompany">{{ p.emailCompany }} <span>↗</span></a></div>
+      <div class="contact-links"><a [href]="p.orcid" target="_blank" rel="noopener">ORCID</a><a [href]="p.researchGate"
+          target="_blank" rel="noopener">ResearchGate</a><a [href]="p.github" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
-    <aside class="qr-panel" aria-label="Profile QR code"><img src="assets/essam-fadel-qr.svg" alt="QR code linking to Essam Fadel's research profile"><p>Scan to save this profile</p><small>{{ p.siteUrl }}</small></aside>
+    <aside class="qr-panel" aria-label="Profile QR code"><img src="assets/essam-fadel-qr.svg"
+        alt="QR code linking to Essam Fadel's research profile">
+      <p>Scan to save this profile</p><small>{{ p.siteUrl }}</small>
+    </aside>
   </section>
   <footer><span>© {{ p.name }} · {{ p.institution }}</span><span>Built for research exchange.</span></footer>
 </main>
